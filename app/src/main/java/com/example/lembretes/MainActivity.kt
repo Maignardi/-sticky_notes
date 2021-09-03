@@ -10,16 +10,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var tarefaAdaptador: TarefaAdaptador
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         tarefaAdaptador = TarefaAdaptador(mutableListOf())
-
-
         rvTarefas.adapter = tarefaAdaptador
         rvTarefas.layoutManager = LinearLayoutManager(this)
-
         btnAdd.setOnClickListener{
             val todoTitle = etTarefas.text.toString()
             if(todoTitle.isNotEmpty()){
@@ -27,15 +23,9 @@ class MainActivity : AppCompatActivity() {
                 tarefaAdaptador.addTodo(todo)
                 etTarefas.text.clear()
             }
-
-
         }
-
         btnDelete.setOnClickListener{
             tarefaAdaptador.deleteTodo()
         }
-
-
-
     }
 }
