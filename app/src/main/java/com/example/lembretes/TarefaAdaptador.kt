@@ -26,20 +26,17 @@ class TarefaAdaptador(
                 false
             )
         )
-
     }
 
 
     fun addTodo(todo: Tarefas){
         todos.add(todo)
         notifyItemInserted(todos.size - 1)
-
     }
 
     fun deleteTodo(){
         todos.removeAll{todo ->
             todo.isChecked
-
         }
         notifyDataSetChanged()
     }
@@ -53,7 +50,6 @@ class TarefaAdaptador(
         } else{
             tvTarefaTitle.paintFlags = tvTarefaTitle.paintFlags and STRIKE_THRU_TEXT_FLAG.inv()
         }
-
     }
 
 
@@ -62,7 +58,6 @@ class TarefaAdaptador(
 
         val curTodo = todos[position]
         holder.itemView.apply {
-
             tvTarefaTitle.text = curTodo.title
             cbDone.isChecked = curTodo.isChecked
             toggleStrikeThrough(tvTarefaTitle, curTodo.isChecked)
@@ -70,17 +65,9 @@ class TarefaAdaptador(
                 toggleStrikeThrough(tvTarefaTitle, isChecked)
                 curTodo.isChecked = !curTodo.isChecked
             }
-
-
-
-
         }
-
     }
     override fun getItemCount(): Int {
-
         return todos.size
-
-
     }
 }
