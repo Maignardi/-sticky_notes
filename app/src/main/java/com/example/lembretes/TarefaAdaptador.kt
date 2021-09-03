@@ -15,7 +15,6 @@ class TarefaAdaptador(
 
     class TarefaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TarefaViewHolder {
 
         return TarefaViewHolder(
@@ -27,7 +26,6 @@ class TarefaAdaptador(
             )
         )
     }
-
 
     fun addTodo(todo: Tarefas){
         todos.add(todo)
@@ -41,8 +39,6 @@ class TarefaAdaptador(
         notifyDataSetChanged()
     }
 
-
-
     private fun toggleStrikeThrough(tvTarefaTitle: TextView, isChecked: Boolean){
 
         if(isChecked){
@@ -51,8 +47,6 @@ class TarefaAdaptador(
             tvTarefaTitle.paintFlags = tvTarefaTitle.paintFlags and STRIKE_THRU_TEXT_FLAG.inv()
         }
     }
-
-
 
     override fun onBindViewHolder(holder: TarefaViewHolder, position: Int) {
 
